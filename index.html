@@ -1,0 +1,247 @@
+<html lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title>
+   Maschat
+  </title>
+  <script src="https://cdn.tailwindcss.com">
+  </script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+ </head>
+ <body class="bg-gray-100">
+  <!-- Splash Screen -->
+  <div class="fixed inset-0 flex items-center justify-center bg-blue-600 text-white" id="splash-screen">
+   <div class="text-center">
+    <img alt="Maschat logo, a simple and elegant chat bubble with a blue background" class="mx-auto mb-4 rounded-full" height="100" src="https://storage.googleapis.com/a1aa/image/7bwHMcINCTalOt1CDUWDrrIUwpmZDNNgnsSOpFpkhRPGf0AKA.jpg" width="100"/>
+    <h1 class="text-4xl font-bold mb-4">
+     Maschat
+    </h1>
+    <p class="text-lg">
+     Connecting happiness
+    </p>
+   </div>
+  </div>
+  <!-- Login and Register Screen -->
+  <div class="hidden fixed inset-0 flex items-center justify-center bg-blue-500" id="auth-screen">
+   <div class="bg-white-500 rounded-lg shadow-lg w-full max-w-md">
+    <h2 class="text-2xl font-bold mb-5 text-center">
+     Welcome to Maschat
+    </h2>
+    <div class="flex flex-col space-y-4">
+     <button class="bg-white p-8 text-black py-2 rounded-lg" id="login-button">
+      Login
+     </button>
+     <button class="bg-white p-8 text-black py-2 rounded-lg" id="register-button">
+      Register
+     </button>
+    </div>
+   </div>
+  </div>
+  <!-- Phone Number Input Screen -->
+  <div class="hidden fixed inset-0 flex items-center justify-center bg-gray-100" id="phone-input-screen">
+   <div class="bg-white p-8 rounded-lg shadow-lg w-full max-w-md">
+    <h2 class="text-2xl font-bold mb-6 text-center">
+     Enter Your Phone Number
+    </h2>
+    <input class="border border-gray-300 p-2 w-full rounded-lg mb-4" id="phone-number" placeholder="Phone Number" type="tel"/>
+    <button class="bg-blue-500 text-white py-2 rounded-lg w-full" id="send-verification-button">
+     Send Verification Code
+    </button>
+   </div>
+  </div>
+  <!-- Verification Code Input Screen -->
+  <div class="hidden fixed inset-0 flex items-center justify-center bg-gray-100" id="verification-screen">
+   <div class="bg-white p-8 rounded-lg shadow-lg w-full max-w-md">
+    <h2 class="text-2xl font-bold mb-6 text-center">
+     Enter Verification Code
+    </h2>
+    <input class="border border-gray-300 p-2 w-full rounded-lg mb-4" id="verification-code" placeholder="Verification Code" type="text"/>
+    <button class="bg-blue-500 text-white py-2 rounded-lg w-full" id="verify-button">
+     Verify
+    </button>
+   </div>
+  </div>
+  <!-- Main Chat Screen -->
+  <div class="hidden" id="main-chat-screen">
+   <div class="bg-blue-600 text-white p-4 flex items-center justify-between">
+    <div class="flex items-center">
+     <i class="fas fa-bars text-2xl">
+     </i>
+     <h1 class="ml-4 text-xl font-bold">
+      Maschat
+     </h1>
+    </div>
+    <div class="flex items-center space-x-4">
+     <span>
+      
+     </span>
+     <i class="fas fa-search text-2xl">
+     </i>
+    </div>
+   </div>
+   <div class="p-4">
+   <div class="fixed bottom-4 right-4">
+    <label class="bg-blue-500 text-white p-4 rounded-full shadow-lg cursor-pointer" for="cameraInput">
+     <i class="fas fa-camera text-2xl">
+     </i>
+    </label>
+    <input accept="image/*" capture="environment" class="hidden" id="cameraInput" type="file"/>
+   </div>
+  </div>
+      <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kirim Pesan</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" />
+</head>
+<body class="bg-gray-100 flex flex-col h-screen">
+
+  <!-- Header -->
+  <header class="bg-none-600 text-white p-4 text-center">
+    <h1 class="text-2xl font-bold"></h1>
+    <p class="text-sm"></p>
+  </header>
+
+  <!-- Chat Area -->
+  <main class="flex-1 p-4 overflow-y-auto" id="chatArea">
+    <div class="space-y-4">
+      <!-- Gelembung pesan penerima -->
+      <div class="flex items-start space-x-3">
+        <div class="bg-gray-300 text-black p-3 rounded-xl max-w-xs">
+          <p>Halo! Selamat datang di layanan curhat busiat</p>
+        </div>
+      </div>
+
+      <!-- Gelembung pesan pengirim -->
+      <div class="flex justify-end space-x-3">
+        <div class="bg-blue-500 text-white p-3 rounded-xl max-w-xs">
+          <p>Terima kasih! Ini sangat membantu.</p>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Input Bar -->
+  <div class="bg-white p-4 border-t">
+    <form id="sendMessageForm" class="flex items-center space-x-2">
+      <input
+        type="text"
+        id="messageInput"
+        class="border border-gray-300 p-2 rounded-lg flex-1"
+        placeholder="Tulis pesan Anda..."
+        required
+      />
+      <button
+        type="submit"
+        class="bg-blue-500 text-white p-2 rounded-lg"
+      >
+        <i class="fas fa-paper-plane"></i>
+      </button>
+    </form>
+  </div>
+  <script>
+    const chatArea = document.getElementById('chatArea');
+    const sendMessageForm = document.getElementById('sendMessageForm');
+    const messageInput = document.getElementById('messageInput');
+
+    // Menangani pengiriman pesan
+    sendMessageForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+
+      const message = messageInput.value.trim();
+      if (message) {
+        // Tambahkan pesan pengirim ke area chat
+        const senderBubble = document.createElement('div');
+        senderBubble.className = 'flex justify-end space-x-3';
+        senderBubble.innerHTML = `
+          <div class="bg-blue-500 text-white p-3 rounded-xl max-w-xs">
+            <p>${message}</p>
+          </div>
+        `;
+        chatArea.appendChild(senderBubble);
+
+        // Reset input pesan
+        messageInput.value = '';
+
+        // Scroll ke bawah otomatis
+        chatArea.scrollTop = chatArea.scrollHeight;
+
+        // Tambahkan respons otomatis (simulasi)
+        setTimeout(() => {
+          const receiverBubble = document.createElement('div');
+          receiverBubble.className = 'flex items-start space-x-3';
+          receiverBubble.innerHTML = `
+            <div class="bg-gray-300 text-black p-3 rounded-xl max-w-xs">
+              <p>ia betul sekali Terima kasih!</p>
+            </div>
+          `;
+          chatArea.appendChild(receiverBubble);
+          chatArea.scrollTop = chatArea.scrollHeight;
+        }, 1000);
+      }
+    });
+  </script>
+</body>
+</html>   
+  <script>
+   // Simulate splash screen delay
+        setTimeout(() => {
+            document.getElementById('splash-screen').classList.add('hidden');
+            document.getElementById('auth-screen').classList.remove('hidden');
+        }, 2000);
+
+        // Add event listeners for login and register buttons
+        document.getElementById('login-button').addEventListener('click', () => {
+            document.getElementById('auth-screen').classList.add('hidden');
+            document.getElementById('phone-input-screen').classList.remove('hidden');
+        });
+
+        document.getElementById('register-button').addEventListener('click', () => {
+            document.getElementById('auth-screen').classList.add('hidden');
+            document.getElementById('phone-input-screen').classList.remove('hidden');
+        });
+
+        // Simulate sending verification code
+        document.getElementById('send-verification-button').addEventListener('click', () => {
+            const phoneNumber = document.getElementById('phone-number').value;
+            if (phoneNumber) {
+                // Simulate sending verification code via SMS or WhatsApp
+                sendVerificationCode(phoneNumber);
+                document.getElementById('phone-input-screen').classList.add('hidden');
+                document.getElementById('verification-screen').classList.remove('hidden');
+            } else {
+                alert('Please enter a valid phone number.');
+            }
+        });
+
+        // Simulate verification process
+        document.getElementById('verify-button').addEventListener('click', () => {
+            const verificationCode = document.getElementById('verification-code').value;
+            if (verificationCode) {
+                // Simulate verifying the code
+                verifyCode(verificationCode);
+            } else {
+                alert('Please enter the verification code.');
+            }
+        });
+
+        function sendVerificationCode(phoneNumber) {
+            // Simulate sending a verification code to the phone number
+            console.log(`Sending verification code to ${phoneNumber}`);
+            // In a real application, you would use an API to send the code
+        }
+
+        function verifyCode(code) {
+            // Simulate verifying the code
+            console.log(`Verifying code ${code}`);
+            // In a real application, you would use an API to verify the code
+            document.getElementById('verification-screen').classList.add('hidden');
+            document.getElementById('main-chat-screen').classList.remove('hidden');
+        }
+  </script>
+ </body>
+</html>
